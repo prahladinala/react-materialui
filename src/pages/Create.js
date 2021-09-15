@@ -9,26 +9,13 @@ import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles({
-  // CLASSES/ OBJECTS AND RULES
-  btn: {
-    fontSize: 60,
-    backgroundColor: 'violet',
-    '&:hover': {
-      // SUDO EFFECT HOVER STATE
-      backgroundColor: 'blue',
-    }
-  },
-  title: {
-    textDecoration: 'underline',
-    marginBottom: 20
-  }
+
 })
 export default function Create() {
   const classes = useStyles()
   return (
     <Container>
       <Typography
-        className={classes.title}
         variant="h6"
         color="textSecondary"
         component="h2"
@@ -38,7 +25,16 @@ export default function Create() {
       </Typography>
 
       <Button
-        className={classes.btn}
+        onClick={() => console.log('You Clicked me')}
+        type="submit"
+        color="primary"
+        variant="contained"
+        endIcon={<SendIcon />}
+      >
+        Submit
+      </Button>
+
+      <Button
         onClick={() => console.log('You Clicked me')}
         type="submit"
         color="secondary"
