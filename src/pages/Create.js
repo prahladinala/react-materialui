@@ -3,6 +3,9 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Container from '@material-ui/core/Container';
+import AcUnitOutlinedIcon from '@material-ui/icons/AcUnitOutlined';
+import SendIcon from '@material-ui/icons/Send';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 export default function Create() {
   return (
@@ -23,16 +26,48 @@ export default function Create() {
         variant="contained" >
         Submit
       </Button>
-      <Button type="submit"> Submit </Button>
-      <Button type="submit" color="secondary" variant="outlined"> Submit </Button>
-      <Button type="submit" color="primary" variant="contained"> Submit </Button>
-      <Button type="submit" color="primary" variant="contained" disableElevation> Submit </Button>
 
-      <ButtonGroup color="secondary" variant="contained">
-        <Button>One</Button>
-        <Button>Two</Button>
-        <Button>Three</Button>
-      </ButtonGroup>
+      {/* ICONS */}
+      <br />
+      <AcUnitOutlinedIcon />
+      <AcUnitOutlinedIcon color="secondary" />
+      <AcUnitOutlinedIcon color="secondary" fontSize="large" />
+      <AcUnitOutlinedIcon color="secondary" fontSize="small" />
+      <AcUnitOutlinedIcon color="action" fontSize="small" />
+      <AcUnitOutlinedIcon color="error" fontSize="small" />
+      <AcUnitOutlinedIcon color="disabled" fontSize="small" />
+
+      <br />
+      <Button
+        onClick={() => console.log('You Clicked me')}
+        type="submit"
+        color="secondary"
+        variant="contained"
+        startIcon={<SendIcon />}
+        endIcon={<ArrowForwardIosIcon />}
+      >
+        Submit
+      </Button>
+      <br />
+      <Button
+        onClick={() => console.log('You Clicked me')}
+        type="submit"
+        color="secondary"
+        variant="contained"
+        startIcon={<SendIcon />}
+      >
+        Submit
+      </Button>
+      <br />
+      <Button
+        onClick={() => console.log('You Clicked me')}
+        type="submit"
+        color="secondary"
+        variant="contained"
+        endIcon={<ArrowForwardIosIcon />}
+      >
+        Submit
+      </Button>
 
     </Container>
   )
