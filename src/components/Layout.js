@@ -11,6 +11,8 @@ import { useHistory, useLocation } from 'react-router';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import { format } from 'date-fns'
+import Avatar from '@material-ui/core/Avatar';
+
 const drawerWidth = 240
 
 const useStyles = makeStyles((theme) => {
@@ -42,6 +44,9 @@ const useStyles = makeStyles((theme) => {
         toolbar: theme.mixins.toolbar,
         date: {
             flexGrow: 1
+        },
+        avatar: {
+            marginLeft: theme.spacing(2)
         }
     }
 })
@@ -77,6 +82,7 @@ export default function Layout({ children }) {
                     <Typography>
                         Prahlad Inala
                     </Typography>
+                    <Avatar src="/pr_av.png" className={classes.avatar} />
                 </Toolbar>
             </AppBar>
             {/* SIDE DRAWER */}
