@@ -2,6 +2,10 @@ import { makeStyles } from '@material-ui/core'
 import React from 'react'
 import Drawer from '@material-ui/core/Drawer';
 import Typography from '@material-ui/core/Typography';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
 
 const drawerWidth = 240
 
@@ -38,6 +42,18 @@ export default function Layout({ children }) {
                         Revocta Notes
                     </Typography>
                 </div>
+
+                <List>
+                    <ListItem>
+                        <ListItemText primary="hello" />
+                    </ListItem>
+                    <ListItem>
+                        <ListItemText primary="hello" />
+                    </ListItem>
+                    <ListItem>
+                        <ListItemText primary="hello" />
+                    </ListItem>
+                </List>
             </Drawer>
             <div className={classes.page}>
                 {children}
