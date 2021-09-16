@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
@@ -6,9 +6,13 @@ import Container from '@material-ui/core/Container';
 import AcUnitOutlinedIcon from '@material-ui/icons/AcUnitOutlined';
 import SendIcon from '@material-ui/icons/Send';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import { makeStyles } from '@material-ui/core';
+import { FormControlLabel, makeStyles } from '@material-ui/core';
 import TextField from '@material-ui/core/TextField';
-import { useState } from 'react';
+import Radio from '@material-ui/core/Radio'
+import RadioGroup from '@material-ui/core/RadioGroup'
+import FormControl from '@material-ui/core/FormControl'
+import FormLabel from '@material-ui/core/FormLabel'
+
 const useStyles = makeStyles({
   field: {
     marginTop: 20,
@@ -25,6 +29,8 @@ export default function Create() {
   const [titleError, setTitleError] = useState(false)
   const [detailsError, setDetailsError] = useState(false)
 
+  const [category, setCategory] = useState('todos')
+
   const handleSubmit = (e) => {
     e.preventDefault()
     setTitleError(false)
@@ -37,7 +43,7 @@ export default function Create() {
       setDetailsError(true)
     }
     if (title && details) {
-      console.log(title, details)
+      console.log(title, details, category)
     }
   }
   return (
@@ -74,6 +80,17 @@ export default function Create() {
           required
           error={detailsError}
         />
+
+        <FormControl className={classes.field}>
+          <FormLabel>Note Category</FormLabel>
+          <RadioGroup value={category} onChange={(e) => setCategory(e.target.value)}>
+            <FormControlLabel value="money" control={<Radio />} label="Money" />
+            <FormControlLabel value="todos" control={<Radio />} label="Todos" />
+            <FormControlLabel value="reminders" control={<Radio />} label="Reminders" />
+            <FormControlLabel value="work" control={<Radio />} label="Work" />
+          </RadioGroup>
+        </FormControl>
+
         <Button
           type="submit"
           color="secondary"
