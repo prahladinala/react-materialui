@@ -10,7 +10,7 @@ const theme = createTheme({
   // https://material-ui.com/customization/default-theme/#default-theme
   palette: {
     primary: {
-      main: '#FBA832'
+      main: '#fff'
     },
     // OR OTHER WAY > GET FONT COLORS FROM MATERIAL COLORS
     // https://material-ui.com/customization/color/#color
